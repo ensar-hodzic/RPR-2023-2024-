@@ -6,7 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lv2-z2" />
+        <module name="lv2-z3" />
       </profile>
     </annotationProcessing>
   </component>
