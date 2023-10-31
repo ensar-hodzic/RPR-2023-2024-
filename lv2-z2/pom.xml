@@ -5,10 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ba.unsa.etf.rpr</groupId>
-  <artifactId>lv2-z1</artifactId>
+  <artifactId>lv2-z2</artifactId>
   <version>1.0</version>
 
-  <name>lv2-z1</name>
+  <name>lv2-z2</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
