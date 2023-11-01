@@ -7,7 +7,7 @@
   <groupId>ba.unsa.etf.rpr</groupId>
   <artifactId>lv2-z3</artifactId>
   <version>1.0</version>
-
+  <packaging>jar</packaging>
   <name>lv2-z3</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
@@ -68,6 +68,31 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.0.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-assembly-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>make-assembly</id>
+              <phase>package</phase>
+              <goals>
+                <goal>single</goal>
+              </goals>
+              <configuration>
+                <archive>
+                  <manifest>
+                    <mainClass>
+                      ba.unsa.etf.rpr.App
+                    </mainClass>
+                  </manifest>
+                </archive>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
