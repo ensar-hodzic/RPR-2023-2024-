@@ -35,7 +35,7 @@ public class Imenik {
 
     public String naSlovo(char s){
         int i=1;
-        String rez=new String();
+        String rez=new String("");
         if(s>'Z') s-=32;
         for(Map.Entry<String, TelefonskiBroj> x:imenik.entrySet()){
             if(x.getKey().toLowerCase().charAt(0)==s) {

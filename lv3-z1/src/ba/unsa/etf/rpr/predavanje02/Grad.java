@@ -13,7 +13,7 @@ public enum Grad {
         return name;
     }
 
-    public Grad gradIzPozivnog(String pozivni){
+    public static Grad gradIzPozivnog(String pozivni){
         for(Grad g:Grad.values()){
             if(g.getName().equals(pozivni)) return g;
         }
