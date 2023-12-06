@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500" minWidth="400" prefHeight="500.0" prefWidth="400.0" style="-fx-background-image: url(&quot;photo/texture.jpg&quot;);" stylesheets="@../fonts/scratch.css" vgap="5.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.tutorijal06.Controller">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="5.0" minHeight="5.0" percentHeight="1.0" prefHeight="5.0" />
+  </rowConstraints>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <Label fx:id="output" alignment="CENTER_RIGHT" focusTraversable="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: rgb(150,255,150); -fx-font-family: 'Seven Segment'; -fx-font-size: 37;" text="0" GridPane.columnSpan="2147483647" GridPane.rowIndex="1">
+         <font>
+            <Font name="OCR A Extended" size="45.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </GridPane.margin>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
+      </Label>
+      <Label alignment="CENTER" text="Cisco " textAlignment="CENTER" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+         <font>
+            <Font name="Gill Sans MT Ext Condensed Bold" size="51.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+      </Label>
+      <Button fx:id="modBtn" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addMod" style="-fx-background-color: #000099;" text="\%" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="divideBtn" alignment="CENTER" layoutX="24.0" layoutY="165.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addDiv" style="-fx-background-color: #000099;" text="/" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button alignment="CENTER" layoutX="114.0" layoutY="165.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addMin" style="-fx-background-color: #000099;" text="-" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="multBtn" alignment="CENTER" layoutX="15.0" layoutY="23.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addMult" style="-fx-background-color: #000099;" text="x" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn7" alignment="CENTER" layoutX="24.0" layoutY="165.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add7" style="-fx-background-color: gray;" text="7" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="plusBtn" alignment="CENTER" layoutX="123.0" layoutY="165.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="95.0" mnemonicParsing="false" onMouseClicked="#addPlus" style="-fx-background-color: #000099;" text="+" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.rowSpan="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn9" alignment="CENTER" layoutX="320.0" layoutY="165.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add9" style="-fx-background-color: gray;" text="9" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn8" alignment="CENTER" layoutX="222.0" layoutY="165.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add8" style="-fx-background-color: gray;" text="8" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn4" alignment="CENTER" layoutX="24.0" layoutY="236.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add4" style="-fx-background-color: gray;" text="4" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="equalsBtn" alignment="BASELINE_CENTER" layoutX="320.0" layoutY="236.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="95.0" mnemonicParsing="false" onMouseClicked="#equals" style="-fx-background-color: maroon;" text="=" textFill="WHITE" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.rowSpan="2" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn6" alignment="CENTER" layoutX="222.0" layoutY="236.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add6" style="-fx-background-color: gray;" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn5" alignment="CENTER" layoutX="123.0" layoutY="236.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add5" style="-fx-background-color: gray;" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn1" alignment="CENTER" layoutX="312.0" layoutY="379.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add1" style="-fx-background-color: gray;" text="1" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn2" alignment="CENTER" layoutX="212.0" layoutY="308.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add2" style="-fx-background-color: gray;" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn3" alignment="CENTER" layoutX="114.0" layoutY="308.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add3" style="-fx-background-color: gray;" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="dotBtn" alignment="CENTER" layoutX="212.0" layoutY="379.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#addDot" style="-fx-background-color: gray;" text="." textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Button fx:id="btn0" alignment="CENTER" layoutX="114.0" layoutY="379.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onMouseClicked="#add0" style="-fx-background-color: gray;" text="0" textFill="WHITE" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="BASELINE">
+         <font>
+            <Font name="SansSerif Bold" size="29.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </GridPane.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </Button>
+      <Label alignment="BOTTOM_CENTER" graphicTextGap="2.0" text="Basic calculator&#10;FQ-3812-3" textFill="#804609" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+         <font>
+            <Font name="Eras Demi ITC" size="11.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </Label>
+      <Rectangle arcHeight="10.0" arcWidth="10.0" fill="#572004" height="50.0" stroke="BLACK" strokeType="INSIDE" width="175.0" GridPane.columnIndex="2" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER">
+         <effect>
+            <InnerShadow>
+               <input>
+                  <Glow level="0.8" />
+               </input></InnerShadow>
+         </effect>
+      </Rectangle>
+   </children>
+</GridPane>
