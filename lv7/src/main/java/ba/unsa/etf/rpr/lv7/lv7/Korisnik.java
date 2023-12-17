@@ -3,7 +3,11 @@ package ba.unsa.etf.rpr.lv7.lv7;
 import javafx.beans.property.SimpleStringProperty;
 
 public class Korisnik {
-    private SimpleStringProperty ime, prezime, email,username, pass;
+    private final SimpleStringProperty ime;
+    private final SimpleStringProperty prezime;
+    private final SimpleStringProperty email;
+    private final SimpleStringProperty username;
+    private final SimpleStringProperty pass;
 
     public Korisnik(String ime, String prezime, String email, String username, String pass) {
         this.ime = new SimpleStringProperty(ime);
@@ -71,5 +75,11 @@ public class Korisnik {
 
     public void setPass(String pass) {
         this.pass.set(pass);
+    }
+    @Override
+    public String toString() {
+        String s="";
+        s=s+this.prezimeProperty().getValue()+" "+this.imeProperty().getValue();
+        return s;
     }
 }
