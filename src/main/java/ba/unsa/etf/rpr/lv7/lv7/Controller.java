@@ -18,6 +18,7 @@ public class Controller {
     @FXML
     public TextField pass;
 
+
     private KorisniciModel model= new KorisniciModel();
 
     public Controller() {
