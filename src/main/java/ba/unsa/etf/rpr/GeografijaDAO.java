@@ -78,7 +78,7 @@ public class GeografijaDAO {
             return new Grad(result.getString(1),result.getInt(2),drzava);
         }
         catch (SQLException e){
-            System.out.println("Nema te drzave");
+            System.out.println("Nepostojeca drzava!");
             return null;
         }
     }
@@ -95,7 +95,7 @@ public class GeografijaDAO {
             stmt.executeUpdate("DELETE FROM grad WHERE drzava="+id);
         }
         catch (SQLException e){
-            System.out.println("Nema te drzave");
+            System.out.println("Nepostojeca drzava!");
         }
     }
 
@@ -109,7 +109,7 @@ public class GeografijaDAO {
             id_drz=ps.executeQuery().getInt(1);
         }
         catch (SQLException e){
-            ResultSet id_drzQuery=stmt.executeQuery("SELECT id FROM grad ORDER BY id DESC");
+            ResultSet id_drzQuery=stmt.executeQuery("SELECT id FROM drzava ORDER BY id DESC");
             id_drz= id_drzQuery.getInt(1)+1;
             PreparedStatement ps = conn.prepareStatement("INSERT INTO drzava VALUES (?,?,?)");
             ps.setInt(1,id_drz);
@@ -125,4 +125,58 @@ public class GeografijaDAO {
         ps.executeUpdate();
     }
 
+    void dodajDrzavu(Drzava drzava) throws SQLException {
+        ResultSet idQuery=stmt.executeQuery("SELECT id FROM drzava ORDER BY id DESC");
+        int id= idQuery.getInt(1);
+        int id_grad;
+        try{
+            PreparedStatement ps = conn.prepareStatement("SELECT id FROM grad WHERE naziv=?");
+            ps.setString(1,drzava.getGlavni_grad());
+            id_grad=ps.executeQuery().getInt(1);
+        }
+        catch (SQLException e){
+            ResultSet id_gradQuery=stmt.executeQuery("SELECT id FROM grad ORDER BY id DESC");
+            id_grad= id_gradQuery.getInt(1)+1;
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO grad VALUES (?,?,?,?)");
+            ps.setInt(1,id_grad);
+            ps.setString(2, drzava.getGlavni_grad());
+            ps.setInt(3,0);
+            ps.setInt(4,id+1);
+            ps.executeUpdate();
+        }
+        PreparedStatement ps = conn.prepareStatement("INSERT INTO drzava VALUES (?,?,?)");
+        ps.setInt(1,id+1);
+        ps.setString(2,drzava.getNaziv());
+        ps.setInt(3,id_grad);
+        ps.executeUpdate();
+    }
+
+    void izmijeniGrad(Grad grad) throws SQLException {
+        int id,id_drz;
+        try{
+            PreparedStatement ps = conn.prepareStatement("SELECT id FROM grad WHERE naziv=?");
+            ps.setString(1,grad.getNaziv());
+            id=ps.executeQuery().getInt(1);
+            PreparedStatement ps1 = conn.prepareStatement("SELECT id FROM drzava WHERE naziv=?");
+            ps1.setString(1,grad.getDrzava());
+            id_drz=ps1.executeQuery().getInt(1);
+        } catch (SQLException e) {
+            System.out.println("Nepostojeci grad");
+            return;
+        }
+        stmt.executeUpdate("UPDATE grad SET naziv='"+grad.getNaziv()+"', broj_stanovnika="+grad.getPopulacija()+", drzava="+id_drz+" WHERE id="+id);
+    }
+
+    Drzava nadjiDrzavu(String drzava){
+        try{
+            PreparedStatement ps = conn.prepareStatement("SELECT d.naziv, g.naziv FROM drzava d, grad g WHERE d.naziv=? AND d.glavni_grad=g.id");
+            ps.setString(1,drzava);
+            ResultSet rez=ps.executeQuery();
+            return new Drzava(rez.getString(1), rez.getString(2));
+        }
+        catch (SQLException e) {
+            System.out.println("Nepostojeca drzava!");
+        }
+        return null;
+    }
 }
