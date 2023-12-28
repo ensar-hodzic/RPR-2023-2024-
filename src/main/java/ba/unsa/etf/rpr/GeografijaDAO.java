@@ -70,9 +70,9 @@ public class GeografijaDAO {
         return list;
     }
 
-    Grad glavniGrad(String drzava) throws SQLException {
-        PreparedStatement ps = conn.prepareStatement("SELECT g.naziv,g.broj_stanovnika FROM grad g, drzava d WHERE d.naziv=? AND d.glavni_grad=g.id");
+    Grad glavniGrad(String drzava) {
         try{
+            PreparedStatement ps = conn.prepareStatement("SELECT g.naziv,g.broj_stanovnika FROM grad g, drzava d WHERE d.naziv=? AND d.glavni_grad=g.id");
             ps.setString(1,drzava);
             ResultSet result = ps.executeQuery();
             return new Grad(result.getString(1),result.getInt(2),drzava);
