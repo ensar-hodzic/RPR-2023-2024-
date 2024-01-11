@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="75.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.demo.ErrorContr">
+   <children>
+      <Button fx:id="btnError" layoutX="84.0" layoutY="38.0" mnemonicParsing="false" onAction="#exit" text="OK" />
+      <Label layoutX="80.0" layoutY="14.0" text="ERROR!" />
+   </children>
+</AnchorPane>
